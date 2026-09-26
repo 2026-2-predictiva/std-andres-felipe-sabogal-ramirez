@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Solara Energy — Soluciones solares EPC y PPA para empresas e industrias. Diseñamos, construimos, financiamos y operamos proyectos fotovoltaicos.">
+
+    <title>Solara Energy | Energía Solar EPC & PPA</title>
+
+    <style>
+        :root {
+            --green: #19c37d;
+            --green-dark: #087443;
+            --green-light: #dff8ec;
+            --dark: #07130f;
+            --dark-2: #0c2119;
+            --text: #26332e;
+            --gray: #66736d;
+            --light: #f5f8f6;
+            --white: #ffffff;
+            --border: #dce6e1;
+            --yellow: #f7c948;
+            --shadow: 0 20px 50px rgba(0, 0, 0, .10);
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 19, 15, .90);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--green);
+            color: var(--dark);
+            font-size: 21px;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dce9e3;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-button {
+            background: var(--green);
+            color: var(--dark) !important;
+            padding: 11px 19px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 76px;
+            background:
+                linear-gradient(110deg, rgba(4,18,12,.97), rgba(4,18,12,.74)),
+                radial-gradient(circle at 75% 25%, rgba(25,195,125,.28), transparent 30%),
+                linear-gradient(135deg, #07130f, #123a28);
+            color: white;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 13px;
+            border: 1px solid rgba(25,195,125,.35);
+            background: rgba(25,195,125,.09);
+            color: #74e8b5;
+            border-radius: 50px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 74px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            max-width: 640px;
+            color: #b7c9c1;
+            font-size: 18px;
+            margin-bottom: 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 23px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(25,195,125,.25);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.25);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.08);
+        }
+
+        .hero-card {
+            padding: 28px;
+            border-radius: 25px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.13);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+        }
+
+        .solar-visual {
+            height: 360px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background:
+                radial-gradient(circle at 70% 20%, #ffd84d 0 7%, transparent 8%),
+                linear-gradient(145deg, #144c34, #07130f);
+        }
+
+        .sun {
+            position: absolute;
+            right: 55px;
+            top: 45px;
+            width: 70px;
+            height: 70px;
+            background: #ffd84d;
+            border-radius: 50%;
+            box-shadow: 0 0 80px rgba(255,216,77,.7);
+        }
+
+        .panel {
+            position: absolute;
+            width: 270px;
+            height: 145px;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%) skewY(-12deg);
+            background:
+                repeating-linear-gradient(90deg,
+                    transparent 0 42px,
+                    rgba(255,255,255,.22) 43px 44px),
+                repeating-linear-gradient(0deg,
+                    #123f63 0 27px,
+                    #1b5c8d 28px 29px);
+            border: 4px solid #9bb1bf;
+            box-shadow: 0 25px 40px rgba(0,0,0,.4);
+        }
+
+        .energy-line {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 22px;
+            height: 2px;
+            background: var(--green);
+            box-shadow: 0 0 15px var(--green);
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .stat {
+            padding: 30px 25px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border: 0;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 30px;
+            color: var(--green-dark);
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            color: var(--green-dark);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            color: var(--dark);
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 17px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: var(--light);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 35px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: var(--green-light);
+            font-size: 26px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--green-dark);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =========================
+           EPC
+        ========================= */
+
+        .epc-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .epc-image {
+            min-height: 470px;
+            border-radius: 25px;
+            background:
+                linear-gradient(135deg, rgba(7,19,15,.2), rgba(7,19,15,.85)),
+                linear-gradient(135deg, #75b9e5, #274d37 55%, #111);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .epc-label {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            background: rgba(0,0,0,.45);
+            backdrop-filter: blur(12px);
+        }
+
+        .steps {
+            display: grid;
+            gap: 18px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 17px;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PPA
+        ========================= */
+
+        .ppa {
+            background: var(--dark);
+            color: white;
+        }
+
+        .ppa .section-header h2 {
+            color: white;
+        }
+
+        .ppa .section-header p {
+            color: #a9bcb4;
+        }
+
+        .ppa-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ppa-card {
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,.045);
+        }
+
+        .ppa-card h3 {
+            color: var(--green);
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .ppa-card p {
+            color: #b7c8c0;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            background: #fff;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .process-item {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 17px;
+            border-radius: 50%;
+            background: var(--green-light);
+            font-size: 25px;
+        }
+
+        .process-item h3 {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .process-item p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: var(--light);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project {
+            border-radius: 18px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-image {
+            height: 210px;
+            background:
+                linear-gradient(135deg, rgba(8,116,67,.1), rgba(4,20,14,.8)),
+                linear-gradient(145deg, #b6e5f8, #4c795f);
+            position: relative;
+        }
+
+        .project-image::after {
+            content: "☀";
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            font-size: 45px;
+            color: #ffe16b;
+        }
+
+        .project-content {
+            padding: 23px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .project-data {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+            margin-top: 17px;
+            padding-top: 15px;
+            font-size: 12px;
+        }
+
+        .project-data strong {
+            display: block;
+            color: var(--green-dark);
+            font-size: 16px;
+        }
+
+        /* =========================
+           CALCULATOR
+        ========================= */
+
+        .calculator {
+            padding: 80px 0;
+        }
+
+        .calculator-box {
+            background: linear-gradient(135deg, #0b2419, #123d29);
+            color: white;
+            border-radius: 25px;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .calculator-box h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .calculator-box p {
+            color: #abc0b6;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            color: #c6d7cf;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(255,255,255,.07);
+            color: white;
+            border-radius: 9px;
+            outline: none;
+        }
+
+        .form-group select option {
+            color: black;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(25,195,125,.12);
+            border: 1px solid rgba(25,195,125,.25);
+            border-radius: 12px;
+        }
+
+        .result strong {
+            color: var(--green);
+            font-size: 28px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 42px;
+            line-height: 1.1;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .contact-item-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--green-light);
+            display: grid;
+            place-items: center;
+        }
+
+        .contact-item small {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--green);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        footer h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #9fb1a9;
+            font-size: 13px;
+        }
+
+        footer a {
+            display: block;
+            margin: 8px 0;
+        }
+
+        footer a:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            color: #81938b;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                padding: 25px;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero-grid,
+            .epc-grid,
+            .calculator-box,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .service-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ppa-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+                letter-spacing: -2px;
+            }
+
+            .hero-card {
+                padding: 15px;
+            }
+
+            .solar-visual {
+                height: 280px;
+            }
+
+            .stats {
+                margin-top: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-box {
+                padding: 28px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="container">
+        <nav>
+
+            <a href="#inicio" class="logo">
+                <div class="logo-icon">☀</div>
+                SOLARA<span>ENERGY</span>
+            </a>
+
+            <div class="menu" onclick="toggleMenu()">☰</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Soluciones</a></li>
+                <li><a href="#epc">EPC</a></li>
+                <li><a href="#ppa">PPA</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-button">Solicitar propuesta</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Infraestructura energética inteligente
+            </div>
+
+            <h1>
+                Energía solar para un
+                <span>futuro rentable.</span>
+            </h1>
+
+            <p>
+                Diseñamos, financiamos, construimos y operamos
+                soluciones fotovoltaicas para empresas e industrias,
+                bajo modelos EPC y PPA.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-primary">
+                    Hablar con un experto →
+                </a>
+
+                <a href="#servicios" class="btn btn-outline">
+                    Conocer soluciones
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="solar-visual">
+
+                <div class="sun"></div>
+
+                <div class="panel"></div>
+
+                <div class="energy-line"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong>+250 MW</strong>
+                <span>Capacidad desarrollada</span>
+            </div>
+
+            <div class="stat">
+                <strong>+180</strong>
+                <span>Proyectos ejecutados</span>
+            </div>
+
+            <div class="stat">
+                <strong>25 años</strong>
+                <span>Experiencia del equipo</span>
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Monitoreo energético</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="servicios">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="eyebrow">Nuestras soluciones</div>
+
+            <h2>
+                Energía diseñada alrededor
+                de tu negocio.
+            </h2>
+
+            <p>
+                Integramos ingeniería, tecnología, financiación,
+                construcción y operación para crear proyectos
+                solares de largo plazo.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <article class="service-card">
+
+                <div class="service-icon">⚙️</div>
+
+                <h3>Modelo EPC</h3>
+
+                <p>
+                    Nos encargamos integralmente del diseño,
+                    suministro, construcción y puesta en operación
+                    de tu planta solar.
+                </p>
+
+                <ul class="service-list">
+                    <li>Ingeniería conceptual y de detalle</li>
+                    <li>Selección y suministro de equipos</li>
+                    <li>Construcción e instalación</li>
+                    <li>Comisionamiento</li>
+                    <li>Operación y mantenimiento</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">📄</div>
+
+                <h3>Modelo PPA</h3>
+
+                <p>
+                    Genera energía solar sin realizar necesariamente
+                    la inversión inicial completa del proyecto.
+                </p>
+
+                <ul class="service-list">
+                    <li>Financiación del proyecto</li>
+                    <li>Precio de energía contratado</li>
+                    <li>Operación y mantenimiento</li>
+                    <li>Gestión de activos</li>
+                    <li>Horizonte contractual de largo plazo</li>
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EPC
+========================= -->
+
+<section id="epc">
+
+    <div class="container epc-grid">
+
+        <div class="epc-image">
+
+            <div class="epc-label">
+
+                <strong>Engineering · Procurement · Construction</strong>
+
+                <p>
+                    Una sola compañía para todo el ciclo
+                    de desarrollo y construcción.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="section-header">
+
+                <div class="eyebrow">EPC</div>
+
+                <h2>
+                    Del diseño a los electrones.
+                </h2>
+
+                <p>
+                    Nuestro modelo EPC integra todas las fases
+                    críticas de una planta fotovoltaica bajo una
+                    única responsabilidad de ejecución.
+                </p>
+
+            </div>
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">01</div>
+
+                    <div>
+                        <h3>Ingeniería</h3>
+                        <p>
+                            Estudios de factibilidad, diseño eléctrico,
+                            estructural, civil y análisis energético.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">02</div>
+
+                    <div>
+                        <h3>Procurement</h3>
+                        <p>
+                            Selección, adquisición y logística de módulos,
+                            inversores, estructuras y sistemas eléctricos.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">03</div>
+
+                    <div>
+                        <h3>Construcción</h3>
+                        <p>
+                            Instalación, montaje electromecánico,
+                            cableado y conexión del sistema.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">04</div>
+
+                    <div>
+                        <h3>Comisionamiento</h3>
+                        <p>
+                            Pruebas, puesta en marcha y verificación
+                            del desempeño de la planta.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PPA
+========================= -->
+
+<section class="ppa" id="ppa">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="eyebrow">Power Purchase Agreement</div>
+
+            <h2>
+                Convierte la energía solar
+                en una decisión financiera.
+            </h2>
+
+            <p>
+                Un PPA puede estructurar el suministro de energía
+                renovable mediante un acuerdo de largo plazo,
+                sujeto a las condiciones comerciales y regulatorias
+                aplicables al proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="ppa-grid">
+
+            <article class="ppa-card">
+
+                <h3>01 · Sin CAPEX inicial</h3>
+
+                <p>
+                    Dependiendo de la estructura contractual,
+                    un tercero puede financiar y ser propietario
+                    del activo energético.
+                </p>
+
+            </article>
+
+
+            <article class="ppa-card">
+
+                <h3>02 · Precio contratado</h3>
+
+                <p>
+                    El acuerdo puede establecer una fórmula
+                    de precio y condiciones de suministro durante
+                    el período contractual.
+                </p>
+
+            </article>
+
+
+            <article class="ppa-card">
+
+                <h3>03 · Operación integral</h3>
+
+                <p>
+                    El propietario del activo puede encargarse
+                    de la operación, mantenimiento y gestión
+                    técnica del sistema.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="eyebrow">Nuestro proceso</div>
+
+            <h2>
+                De la primera conversación
+                a la energía.
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-item">
+                <div class="process-icon">🔎</div>
+                <h3>Diagnóstico</h3>
+                <p>Analizamos consumo, infraestructura y objetivos.</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-icon">📐</div>
+                <h3>Diseño</h3>
+                <p>Dimensionamos la solución fotovoltaica.</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-icon">💰</div>
+                <h3>Estructuración</h3>
+                <p>Evaluamos EPC, PPA y alternativas financieras.</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-icon">🏗️</div>
+                <h3>Construcción</h3>
+                <p>Ejecutamos la instalación y puesta en marcha.</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-icon">📊</div>
+                <h3>Monitoreo</h3>
+                <p>Medimos el desempeño energético del proyecto.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="proyectos">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="eyebrow">Portafolio</div>
+
+            <h2>
+                Proyectos que convierten
+                radiación solar en energía.
+            </h2>
+
+            <p>
+                Ejemplos ilustrativos de cómo puede estructurarse
+                un portafolio solar empresarial.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            <article class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h3>Planta Industrial Norte</h3>
+
+                    <p>
+                        Sistema fotovoltaico para autoconsumo
+                        industrial.
+                    </p>
+
+                    <div class="project-data">
+
+                        <div>
+                            <strong>5.2 MWp</strong>
+                            Potencia
+                        </div>
+
+                        <div>
+                            <strong>7.8 GWh</strong>
+                            Energía anual*
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h3>Centro Logístico Solar</h3>
+
+                    <p>
+                        Proyecto de generación distribuida
+                        para operación logística.
+                    </p>
+
+                    <div class="project-data">
+
+                        <div>
+                            <strong>2.8 MWp</strong>
+                            Potencia
+                        </div>
+
+                        <div>
+                            <strong>PPA</strong>
+                            Modelo
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h3>Parque Solar Empresarial</h3>
+
+                    <p>
+                        Planta de generación para suministro
+                        de energía a largo plazo.
+                    </p>
+
+                    <div class="project-data">
+
+                        <div>
+                            <strong>12 MWp</strong>
+                            Potencia
+                        </div>
+
+                        <div>
+                            <strong>25 años</strong>
+                            Horizonte*
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <p style="margin-top:20px;font-size:11px;color:#77837e;">
+            * Valores utilizados con fines ilustrativos. Los resultados reales
+            dependen de ubicación, irradiación, diseño, consumo, tecnología,
+            condiciones contractuales y demás variables del proyecto.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CALCULATOR
+========================= -->
+
+<section class="calculator">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+            <div>
+
+                <div class="eyebrow" style="color:#64e5a9;">
+                    Simulador preliminar
+                </div>
+
+                <h2>
+                    ¿Cuánto podría representar
+                    tu consumo energético?
+                </h2>
+
+                <p>
+                    Introduce algunos datos básicos para obtener
+                    una estimación matemática sencilla. No sustituye
+                    un estudio técnico-financiero.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="form-group">
+
+                    <label>
+                        Consumo mensual aproximado (kWh)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="consumo"
+                        placeholder="Ej: 100000"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Precio promedio de energía ($/kWh)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="precio"
+                        placeholder="Ej: 800"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="calcularAhorro()"
+                    style="border:0;cursor:pointer;width:100%;"
+                >
+                    Calcular estimación
+                </button>
+
+
+                <div class="result" id="resultado">
+
+                    <span>
+                        Ahorro mensual estimado
+                    </span>
+
+                    <br>
+
+                    <strong>$0</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contacto">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info">
+
+            <div class="eyebrow">Hablemos</div>
+
+            <h2>
+                Diseñemos tu
+                próxima planta solar.
+            </h2>
+
+            <p>
+                Cuéntanos sobre tu empresa, consumo energético
+                y objetivos. Nuestro equipo puede ayudarte a
+                evaluar diferentes alternativas.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div class="contact-item-icon">📍</div>
+
+                <div>
+                    <strong>Oficina central</strong>
+                    <br>
+                    <small>Colombia · Latinoamérica</small>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-item-icon">✉️</div>
+
+                <div>
+                    <strong>Email</strong>
+                    <br>
+                    <small>contacto@solaraenergy.com</small>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-item-icon">☎️</div>
+
+                <div>
+                    <strong>Consultoría energética</strong>
+                    <br>
+                    <small>Agenda una conversación</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form class="contact-form" onsubmit="enviarFormulario(event)">
+
+            <h3 style="margin-bottom:20px;">
+                Solicita una evaluación
+            </h3>
+
+            <input
+                type="text"
+                placeholder="Nombre completo"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Empresa"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Correo electrónico"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Teléfono"
+            >
+
+            <select required>
+
+                <option value="">
+                    ¿Qué solución te interesa?
+                </option>
+
+                <option>
+                    Proyecto EPC
+                </option>
+
+                <option>
+                    PPA
+                </option>
+
+                <option>
+                    EPC + financiación
+                </option>
+
+                <option>
+                    Operación y mantenimiento
+                </option>
+
+                <option>
+                    Otro
+                </option>
+
+            </select>
+
+            <textarea
+                placeholder="Cuéntanos brevemente sobre tu proyecto..."
+            ></textarea>
+
+            <button
+                class="btn btn-primary"
+                style="border:0;width:100%;cursor:pointer;"
+            >
+                Enviar solicitud →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <a href="#inicio" class="logo">
+                    <div class="logo-icon">☀</div>
+                    SOLARA<span>ENERGY</span>
+                </a>
+
+                <p style="margin-top:20px;max-width:300px;">
+                    Soluciones de energía solar para empresas,
+                    industrias e infraestructura.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Soluciones</h3>
+
+                <a href="#epc">EPC</a>
+                <a href="#ppa">PPA</a>
+                <a href="#servicios">Autoconsumo</a>
+                <a href="#servicios">O&M</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Empresa</h3>
+
+                <a href="#inicio">Nosotros</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Legal</h3>
+
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos de uso</a>
+                <a href="#">Cookies</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Solara Energy. Todos los derechos reservados.
+            </span>
+
+            <span>
+                Energía · Ingeniería · Financiación
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    function calcularAhorro() {
+
+        const consumo =
+            parseFloat(document.getElementById("consumo").value) || 0;
+
+        const precio =
+            parseFloat(document.getElementById("precio").value) || 0;
+
+        /*
+            Supuesto ilustrativo:
+            se considera que la solución solar
+            puede compensar aproximadamente el 30%
+            del consumo indicado.
+
+            Este porcentaje NO representa una propuesta
+            técnica real.
+        */
+
+        const porcentajeSolar = 0.30;
+
+        const ahorro =
+            consumo * precio * porcentajeSolar;
+
+        const resultado =
+            document.getElementById("resultado");
+
+        resultado.innerHTML = `
+            <span>
+                Ahorro mensual estimado*
+            </span>
+            <br>
+            <strong>
+                $${ahorro.toLocaleString("es-CO")}
+            </strong>
+            <br>
+            <small style="color:#a9c9bb;">
+                *Estimación ilustrativa. Requiere estudio energético.
+            </small>
+        `;
+
+    }
+
+
+    function enviarFormulario(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Gracias por tu solicitud. " +
+            "Un asesor energético se pondrá en contacto contigo."
+        );
+
+    }
+
+
+    /*
+        Cierra el menú móvil al hacer clic
+        sobre un enlace.
+    */
+
+    document.querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+</script>
+
+</body>
+</html>
